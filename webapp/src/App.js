@@ -142,10 +142,10 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className="page">
       <Background now={now} />
       <div className="app">
-      <div className="clock">{timeStr}</div>
+        <div className="clock">{timeStr}</div>
       <div className="date">{dateStr}</div>
 
       <div className="row">
@@ -180,6 +180,6 @@ export default function App() {
         <button className="btn-stop" onClick={handleStop} disabled={!alarmSet && !triggered}>🛑 Alarm stoppen</button>
       </div>
       </div>
-    </>
+    </div>
   );
 }

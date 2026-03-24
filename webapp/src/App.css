@@ -5,12 +5,18 @@
 }
 
 body {
-  background: #1e1e2e;
   font-family: 'Segoe UI', sans-serif;
+  background: #020617;
+}
+
+/* Vollbild-Wrapper – zentriert die Karte */
+.page {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  overflow: hidden;
 }
 
 .app {
