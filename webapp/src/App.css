@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #1e1e2e;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  background: #24273a;
+  border-radius: 16px;
+  padding: 36px 40px;
+  width: 400px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.clock {
+  font-size: 64px;
+  font-weight: bold;
+  font-family: 'Consolas', monospace;
+  color: #cdd6f4;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.date {
+  font-size: 15px;
+  color: #a6adc8;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.row label {
+  color: #cdd6f4;
+  font-size: 15px;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+.row input[type="time"],
+.row select {
+  flex: 1;
+  background: #313244;
+  color: #cdd6f4;
+  border: 1px solid #585b70;
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 15px;
+  outline: none;
+}
+
+.row input[type="time"]:focus,
+.row select:focus {
+  border-color: #89b4fa;
+}
+
+.status {
+  font-size: 14px;
+  text-align: center;
+  min-height: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-set, .btn-stop {
+  flex: 1;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-set {
+  background: #89b4fa;
+  color: #1e1e2e;
+}
+
+.btn-stop {
+  background: #f38ba8;
+  color: #1e1e2e;
+}
+
+.btn-set:hover, .btn-stop:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.btn-stop:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
