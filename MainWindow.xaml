@@ -5,12 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AlarmClock"
         mc:Ignorable="d"
-        Title="Weckuhr" Height="400" Width="420"
+        Title="Weckuhr" Height="520" Width="440"
         ResizeMode="NoResize"
         Background="#1E1E2E">
 
-    <Grid Margin="20">
+    <Grid Margin="24">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -27,27 +29,27 @@
                    Foreground="#CDD6F4"
                    HorizontalAlignment="Center"
                    FontFamily="Consolas"
-                   Margin="0,10,0,20"/>
+                   Margin="0,10,0,4"/>
 
         <!-- Datum -->
         <TextBlock x:Name="CurrentDateText"
                    Grid.Row="1"
                    Text=""
-                   FontSize="16"
+                   FontSize="15"
                    Foreground="#A6ADC8"
                    HorizontalAlignment="Center"
-                   Margin="0,0,0,30"/>
+                   Margin="0,0,0,24"/>
 
         <!-- Weckzeit einstellen -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,15">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,14">
             <TextBlock Text="Weckzeit:"
                        Foreground="#CDD6F4"
-                       FontSize="16"
+                       FontSize="15"
                        VerticalAlignment="Center"
                        Margin="0,0,10,0"/>
             <TextBox x:Name="AlarmTimePicker"
-                     Width="120"
-                     FontSize="16"
+                     Width="110"
+                     FontSize="15"
                      Background="#313244"
                      Foreground="#CDD6F4"
                      BorderBrush="#585B70"
@@ -57,17 +59,62 @@
                      Height="32"/>
         </StackPanel>
 
+        <!-- Ton-Auswahl -->
+        <Grid Grid.Row="3" Margin="0,0,0,14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Weckton:"
+                       Foreground="#CDD6F4"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       Margin="0,0,10,0"
+                       Grid.Column="0"/>
+            <ComboBox x:Name="SoundComboBox"
+                      Grid.Column="1"
+                      FontSize="14"
+                      Background="#313244"
+                      Foreground="#CDD6F4"
+                      BorderBrush="#585B70"
+                      Height="32"
+                      SelectionChanged="SoundComboBox_SelectionChanged"/>
+        </Grid>
+
+        <!-- Radiosender (nur sichtbar wenn Radio gewählt) -->
+        <Grid Grid.Row="4" Margin="0,0,0,14" x:Name="RadioPanel" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Sender:"
+                       Foreground="#CDD6F4"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       Margin="0,0,10,0"
+                       Grid.Column="0"/>
+            <ComboBox x:Name="RadioComboBox"
+                      Grid.Column="1"
+                      FontSize="14"
+                      Background="#313244"
+                      Foreground="#CDD6F4"
+                      BorderBrush="#585B70"
+                      Height="32"/>
+        </Grid>
+
         <!-- Status -->
         <TextBlock x:Name="StatusText"
-                   Grid.Row="3"
+                   Grid.Row="5"
                    Text="Kein Alarm gesetzt"
                    FontSize="14"
                    Foreground="#A6E3A1"
                    HorizontalAlignment="Center"
-                   Margin="0,0,0,20"/>
+                   Margin="0,0,0,20"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"/>
 
         <!-- Buttons -->
-        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="SetAlarmButton"
                     Content="⏰ Alarm setzen"
                     Width="150" Height="40"
