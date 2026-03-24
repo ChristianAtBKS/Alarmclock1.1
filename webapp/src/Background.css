@@ -1,0 +1,130 @@
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  transition: filter 3s ease;
+}
+
+.bg-sky {
+  position: absolute;
+  inset: 0;
+  transition: background 4s ease;
+}
+
+/* ── Stars ── */
+.bg-star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.4); }
+}
+
+/* ── Sun ── */
+.bg-sun {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  background: radial-gradient(circle at 40% 40%, #fef9c3, #fbbf24 60%, #f97316);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 60s linear, top 60s linear;
+}
+
+/* ── Moon ── */
+.bg-moon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: radial-gradient(circle at 38% 38%, #f8fafc, #cbd5e1 70%, #94a3b8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 35px 12px rgba(186, 230, 253, 0.25);
+  transition: left 60s linear, top 60s linear;
+}
+
+/* ── Clouds ── */
+.bg-cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 50px;
+  animation: drift linear infinite;
+}
+.bg-cloud::before,
+.bg-cloud::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+}
+.bg-cloud::before {
+  width: 55%;
+  height: 160%;
+  top: -55%;
+  left: 12%;
+}
+.bg-cloud::after {
+  width: 38%;
+  height: 130%;
+  top: -35%;
+  right: 12%;
+}
+@keyframes drift {
+  from { transform: translateX(-200px); }
+  to   { transform: translateX(calc(100vw + 200px)); }
+}
+
+/* ── Rain ── */
+.bg-rain {
+  position: absolute;
+  top: -25px;
+  width: 2px;
+  height: 22px;
+  background: linear-gradient(to bottom, transparent, rgba(147, 197, 253, 0.75));
+  border-radius: 2px;
+  animation: rain-fall linear infinite;
+}
+@keyframes rain-fall {
+  to { transform: translateY(105vh) translateX(-10px); }
+}
+
+/* ── Snow ── */
+.bg-snow {
+  position: absolute;
+  top: -10px;
+  width: 7px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  animation: snow-fall linear infinite;
+}
+@keyframes snow-fall {
+  to { transform: translateY(105vh) translateX(25px); }
+}
+
+/* ── Hills SVG ── */
+.bg-hills {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 38%;
+}
+
+/* ── Weather badge ── */
+.bg-badge {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: rgba(0, 0, 0, 0.38);
+  color: #e2e8f0;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  backdrop-filter: blur(6px);
+  letter-spacing: 0.3px;
+}

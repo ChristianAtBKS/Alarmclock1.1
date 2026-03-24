@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './App.css';
+import Background from './Background';
 
 const SOUNDS = [
   { name: '🔔 Standard-Alarm', type: 'system' },
@@ -141,7 +142,9 @@ export default function App() {
   }
 
   return (
-    <div className="app">
+    <>
+      <Background now={now} />
+      <div className="app">
       <div className="clock">{timeStr}</div>
       <div className="date">{dateStr}</div>
 
@@ -176,6 +179,7 @@ export default function App() {
         <button className="btn-set" onClick={handleSet}>⏰ Alarm setzen</button>
         <button className="btn-stop" onClick={handleStop} disabled={!alarmSet && !triggered}>🛑 Alarm stoppen</button>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
