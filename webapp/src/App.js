@@ -12,7 +12,7 @@ const RADIO_STATIONS = [
   { name: 'SWR3',           url: 'https://liveradio.swr.de/sw282p3/swr3/play.mp3' },
   { name: 'Antenne Bayern', url: 'https://stream.antenne.de/antenne/stream.mp3' },
   { name: '1LIVE (WDR)',    url: 'https://wdr-1live-live.icecastssl.wdr.de/wdr/1live/live/mp3/128/stream.mp3' },
-  { name: 'NDR 2',          url: 'https://ndr-ndr2-live.sslcast.addradio.de/ndr/ndr2/live/mp3/128/stream.mp3' },
+  { name: 'NDR 2',          url: 'https://ndr-ndr2-live.icecast.addradio.de/ndr/ndr2/live/mp3/128/stream.mp3' },
   { name: 'Radio Bob!',     url: 'https://streams.radiobob.de/bob-live/mp3-192/mediaplayer' },
   { name: 'Energy München', url: 'https://streams.energy.de/energy_mue/mp3-128' },
 ];
@@ -93,7 +93,6 @@ export default function App() {
       setStatus('🔔 WECKER KLINGELT!');
     }
     setStatusColor('#f38ba8');
-    window.alert('⏰ Wecker! Zeit aufzustehen!');
   }
 
   function handleSet() {
