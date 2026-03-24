@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Alarmclock1.1/static/css/main.07273297.css",
+    "main.js": "/Alarmclock1.1/static/js/main.b71848f6.js",
+    "static/js/453.b095dc89.chunk.js": "/Alarmclock1.1/static/js/453.b095dc89.chunk.js",
+    "index.html": "/Alarmclock1.1/index.html",
+    "main.07273297.css.map": "/Alarmclock1.1/static/css/main.07273297.css.map",
+    "main.b71848f6.js.map": "/Alarmclock1.1/static/js/main.b71848f6.js.map",
+    "453.b095dc89.chunk.js.map": "/Alarmclock1.1/static/js/453.b095dc89.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07273297.css",
+    "static/js/main.b71848f6.js"
+  ]
+}
