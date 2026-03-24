@@ -1,8 +1,24 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+beforeEach(() => {
+  global.fetch = jest.fn().mockResolvedValue({
+    json: async () => ({
+      current_condition: [{
+        weatherCode: '113',
+        weatherDesc: [{ value: 'Sunny' }],
+        temp_C: '20',
+      }],
+    }),
+  });
+});
+
+test('zeigt die aktuelle Uhrzeit an', async () => {
+  await act(async () => render(<App />));
+  expect(screen.getByText(/Alarm setzen/i)).toBeInTheDocument();
+});
+
+test('zeigt Weckzeit-Eingabe an', async () => {
+  await act(async () => render(<App />));
+  expect(screen.getByDisplayValue('07:00')).toBeInTheDocument();
 });
