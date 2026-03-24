@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Alarmclock1.1/static/css/main.07273297.css",
-    "main.js": "/Alarmclock1.1/static/js/main.99988bd7.js",
+    "main.css": "/Alarmclock1.1/static/css/main.f7babcdd.css",
+    "main.js": "/Alarmclock1.1/static/js/main.c763bdb4.js",
     "static/js/453.b095dc89.chunk.js": "/Alarmclock1.1/static/js/453.b095dc89.chunk.js",
     "index.html": "/Alarmclock1.1/index.html",
-    "main.07273297.css.map": "/Alarmclock1.1/static/css/main.07273297.css.map",
-    "main.99988bd7.js.map": "/Alarmclock1.1/static/js/main.99988bd7.js.map",
+    "main.f7babcdd.css.map": "/Alarmclock1.1/static/css/main.f7babcdd.css.map",
+    "main.c763bdb4.js.map": "/Alarmclock1.1/static/js/main.c763bdb4.js.map",
     "453.b095dc89.chunk.js.map": "/Alarmclock1.1/static/js/453.b095dc89.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.07273297.css",
-    "static/js/main.99988bd7.js"
+    "static/css/main.f7babcdd.css",
+    "static/js/main.c763bdb4.js"
   ]
 }
