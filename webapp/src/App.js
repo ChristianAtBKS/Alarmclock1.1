@@ -37,8 +37,21 @@ async function isInternetAvailable() {
   }
 }
 
+// AudioContext wird beim ersten User-Klick erstellt und bleibt aktiv
+let sharedAudioCtx = null;
+
+function getAudioContext() {
+  if (!sharedAudioCtx) {
+    sharedAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (sharedAudioCtx.state === 'suspended') {
+    sharedAudioCtx.resume();
+  }
+  return sharedAudioCtx;
+}
+
 function playBeep() {
-  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const ctx = getAudioContext();
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
   osc.connect(gain);
@@ -100,6 +113,8 @@ export default function App() {
       alert('Bitte eine gültige Uhrzeit eingeben (z. B. 07:30)');
       return;
     }
+    // AudioContext beim User-Klick aktivieren (Browser-Autoplay-Freigabe)
+    getAudioContext();
     stopAudio();
     setAlarmSet(true);
     setTriggered(false);
